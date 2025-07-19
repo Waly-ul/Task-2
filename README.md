@@ -1,12 +1,32 @@
 # Developing a RESTful API for a Task Management System
 
--Build a RESTful API for a task management system that supports CRUD operations for tasks (create, read, update, delete).
+- Build a RESTful API for a task management system that supports CRUD operations for tasks (create, read, update, delete).
 
--Use Laravel's API resources to format responses consistently.
+- Use Laravel's API resources to format responses consistently.
 
--Implement authentication for API endpoints using JWT.
+- Implement authentication for API endpoints using JWT.
 
--Include proper validation, error handling, and documentation (e.g., in the README or using tools like Swagger/OpenAPI).
+- Include proper validation, error handling, and documentation (e.g., in the README or using tools like Swagger/OpenAPI).
+
+# I used Laravel's own resource controller to solve the task. Below are the route identifiers:
+
+## Auth Routes:
+
+- POST `/api/register` - Register new user
+- POST `/api/login` - Login and get JWT
+- POST `/api/logout` - Logout (JWT Required)
+- GET `/api/me` - Get authenticated user (JWT Required)
+
+## Task Routes (JWT Required)
+
+- GET `/api/tasks`
+- POST `/api/tasks`
+- GET `/api/tasks/{id}`
+- PUT `/api/tasks/{id}`
+- Delete `/api/tasks/{id}`
+
+Each route has been checked with the postman, and all routes have run successfully. That is, the task has performed all operations: create, read, update, and delete.
+
 
 ## 🚀 Project Setup Guide
 
@@ -55,5 +75,5 @@
     php artisan jwt:secret
 
 11. Start the Laravel development server:
-
+    ```
     php artisan serve
